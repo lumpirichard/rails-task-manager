@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+
+root to: 'to_dos#index'
+
+get 'tasks' => 'to_dos#index'
+
+get 'tasks/new' => 'to_dos#new', as: :new
+post "tasks", to: "to_dos#create"
+
+
+
+get 'tasks/:id' => 'to_dos#show', as: :detail
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

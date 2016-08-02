@@ -1,0 +1,16 @@
+<h1> To Do list</h1>
+
+
+<% link_to "New Task", new_path %>
+
+<ul>
+
+  <% @all.each do |t| %>
+    <li>
+      <%= t.name %>
+      <%= link_to 'Detail', detail_path(t)  %>
+    </li>
+
+  <% end %>
+
+</ul>

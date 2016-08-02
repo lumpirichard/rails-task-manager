@@ -1,0 +1,10 @@
+<h1>New Task</h1>
+
+
+<form action="/tasks" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <input type="text" placeholder="ToDo" name="task[name]">
+  <input type="text" placeholder="Description" name="task[description]">
+  <input type="submit">
+</form>
+
