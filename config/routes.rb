@@ -2,16 +2,18 @@ Rails.application.routes.draw do
 
 root to: 'to_dos#index'
 
-get 'tasks' => 'to_dos#index'
+get 'tasks' => 'to_dos#index', as: :index
 
 get 'tasks/new' => 'to_dos#new', as: :new
 post "tasks", to: "to_dos#create"
 
 
-
 get 'tasks/:id' => 'to_dos#show', as: :detail
 
+get 'tasks/:id/edit' => "to_dos#edit", as: :edit
+patch 'tasks/:id' => 'to_dos#update'
 
+delete 'tasks/:id' => 'to_dos#destroy', as: :destroy
 
 
   # The priority is based upon order of creation: first created -> highest priority.
